@@ -12,6 +12,7 @@
 		37B7F62920ED0939000AE5CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37B7F62720ED0939000AE5CC /* Main.storyboard */; };
 		37B7F62B20ED093A000AE5CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37B7F62A20ED093A000AE5CC /* Assets.xcassets */; };
 		37B7F62E20ED093A000AE5CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37B7F62C20ED093A000AE5CC /* LaunchScreen.storyboard */; };
+		8F62F999F7DCE8D5082A4542 /* Pods_swift_lint.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF394147096448A4051C72E9 /* Pods_swift_lint.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		37B7F62A20ED093A000AE5CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37B7F62D20ED093A000AE5CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		37B7F62F20ED093A000AE5CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1C53FD47B5021324858F179 /* Pods-swift-lint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-lint.debug.xcconfig"; path = "Pods/Target Support Files/Pods-swift-lint/Pods-swift-lint.debug.xcconfig"; sourceTree = "<group>"; };
+		D78E3DEC330DB441D4557297 /* Pods-swift-lint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-lint.release.xcconfig"; path = "Pods/Target Support Files/Pods-swift-lint/Pods-swift-lint.release.xcconfig"; sourceTree = "<group>"; };
+		FF394147096448A4051C72E9 /* Pods_swift_lint.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swift_lint.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F62F999F7DCE8D5082A4542 /* Pods_swift_lint.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3207CBFFB2F55358C7BA7422 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A1C53FD47B5021324858F179 /* Pods-swift-lint.debug.xcconfig */,
+				D78E3DEC330DB441D4557297 /* Pods-swift-lint.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		37B7F61720ED0939000AE5CC = {
 			isa = PBXGroup;
 			children = (
 				37B7F62220ED0939000AE5CC /* swift-lint */,
 				37B7F62120ED0939000AE5CC /* Products */,
+				3207CBFFB2F55358C7BA7422 /* Pods */,
+				3CD9B2FDB4E066A2853FD849 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +80,14 @@
 			path = "swift-lint";
 			sourceTree = "<group>";
 		};
+		3CD9B2FDB4E066A2853FD849 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FF394147096448A4051C72E9 /* Pods_swift_lint.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 37B7F63220ED093A000AE5CC /* Build configuration list for PBXNativeTarget "swift-lint" */;
 			buildPhases = (
+				3C3A64011F5CECFF75C0C7AF /* [CP] Check Pods Manifest.lock */,
 				37B7F61C20ED0939000AE5CC /* Sources */,
 				37B7F61D20ED0939000AE5CC /* Frameworks */,
 				37B7F61E20ED0939000AE5CC /* Resources */,
+				37B7F63520ED0A12000AE5CC /* SwiftLint Script */,
 			);
 			buildRules = (
 			);
@@ -129,6 +155,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		37B7F63520ED0A12000AE5CC /* SwiftLint Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "SwiftLint Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		3C3A64011F5CECFF75C0C7AF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-swift-lint-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		37B7F61C20ED0939000AE5CC /* Sources */ = {
@@ -280,6 +345,7 @@
 		};
 		37B7F63320ED093A000AE5CC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1C53FD47B5021324858F179 /* Pods-swift-lint.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -297,6 +363,7 @@
 		};
 		37B7F63420ED093A000AE5CC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D78E3DEC330DB441D4557297 /* Pods-swift-lint.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
